@@ -1,4 +1,4 @@
-## part 1
+## Part 1
 
 * What happens if you remove the `go-command` from the `Seek` call in the `main` function?
     * It no longor multi-thread the calls, thus making them in a specified order. Eg. it will always start with anna and then bob and so on. Thus making bob recieve anna's msg, dave recieves cody's msg and no one recieves Eva's msg.
@@ -11,3 +11,11 @@
 
 * What happens if you remove the default-case from the case-statement in the `main` function?
     * If you have an even amount of elements in people, there will not be an message left in `match` and the main goroutine will block until it recieves, which it never will, and a dead-lock will happen.
+
+## Part 2
+
+
+|Variant       | Runtime (ms) | #Samples |
+| ------------ | ------------:| -----------|
+| singleworker |           13.7| 1000 |
+| mapreduce    |          9.03 | 1000 |
